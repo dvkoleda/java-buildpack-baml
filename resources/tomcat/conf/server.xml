@@ -19,9 +19,8 @@
 <Server port='-1'>
 
     <Listener className='org.apache.catalina.core.JasperListener'/>
-
     <Service name='Catalina'>
-        <Connector port='${http.port}' bindOnInit="false"/>
+        <Connector SSLEnabled="true" keystoreFile=""${catalina.home}/conf/baml.keystore"" keystorePass="baml_admin" port="8443" scheme="https" secure="true" sslProtocol="TLS"/> 
 
         <Engine defaultHost='localhost' name='Catalina'>
             <Valve className="org.apache.catalina.valves.RemoteIpValve" protocolHeader="x-forwarded-proto"/>
